@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+body {
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    margin: 4em 0 0 0;
+    display: grid;
+    grid-template-rows: 1fr 3em;
+}
+
+/* navbar styles */
+nav {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.5em 0 0.5em 0;
+}
+nav ul li a:active {
+	color: lightblue;
+}
+nav ul {
+    padding: 0;
+    margin: 0 1em 0 1em;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav #title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* main styles */
+main {
+    grid-row: 1 / 2;
+}
+main h2 {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+main h3 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+main #personal, main #skills, main #hobbies, main #education, main #experience {
+    padding: 0 2em 0 2em;
+}
+
+/* profile image style*/
+#image {
+    text-align: center;
+}
+
+/* footer styles */
+footer {
+    grid-row: -1 / -2;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75em;
+    text-align: center;
+    margin-top: 1em;
+    padding: 0.2em 0 0.2em 0;
+}
+footer a:link, footer a:visited , footer a:focus, footer a:hover, footer a:active {
+	color: black;
+}
+
+
+
+/* for tablet */
+@media screen and (min-width: 760px) {
+
+    /* increasing title size */
+    nav #title {
+        font-size: 1.5em; 
+    }
+
+    /* Changing content alignment */
+    main h2, main h3 {
+        text-align: left;  
+    }
+    main p {
+        text-align: left;
+        margin-left: 2em;
+    }
+
+}
+
+
+
+/* for PC */
+@media screen and (min-width: 1025px) {
+
+    /* changing the display to grid */
+    main {
+        display: grid;
+        margin: 0 2em 0 2em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: rep(max-content, 5);
+    }
+    
+    /* main content grid style */
+    #image {
+        grid-column: 1 / 2;
+        grid-row: 1 / span 3;
+        text-align: left;
+        margin-left: 3em;
+    }
+    #personal {
+        grid-column: -1 / -2;
+        grid-row: 1 / span 1;
+    }
+    #skills {
+        grid-column: -1 / -2;
+        grid-row: 2 / span 1;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+    }
+    #skills h2{
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+    #skills #sub1{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    #skills #sub2{
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    #hobbies{
+        grid-column: -1 / -2;
+        grid-row: 3 / span 1;
+    }
+    #education{
+        grid-column: 1 / -1;
+        grid-row: 4 / span 1;
+    }
+    #experience{
+        grid-column: 1 / -1;
+        grid-row: 5 / span 1;
+    }
+
+}
